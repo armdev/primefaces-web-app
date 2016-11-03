@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"> 
+    
+     <h:head>
+        <ui:include src="/WEB-INF/layout/header_login.xhtml"/>     
+     </h:head>
+    <h:body>  
+        <div class="wrapper">            
+            <ui:insert name="content"></ui:insert>
+            <div class="container">
+                <ui:insert name="footer"></ui:insert>                
+            </div><!-- /.container -->            
+             <ui:include src="/WEB-INF/layout/footer_includes.xhtml"/>  
+              <!--=== Sticky Footer ===-->
+                <div class="container sticky-footer">
+                    <ul class="list-unstyled list-inline social-links margin-bottom-20">
+                        <li><a href="#"><i class="icon-custom icon rounded-x icon-bg-blue fa fa-facebook"></i></a></li>
+                        <li><a href="#"><i class="icon-custom icon rounded-x icon-bg-blue fa fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="icon-custom icon rounded-x icon-bg-blue fa fa-google-plus"></i></a></li>
+                    </ul>
+                    <p class="copyright-space">
+                        2016 &copy; All Rights Reserved <a href="#">Info</a>
+                    </p>
+                </div>
+               
+        </div>
+    </h:body>
+</html>
+

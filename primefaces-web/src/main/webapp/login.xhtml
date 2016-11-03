@@ -1,0 +1,89 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:p="http://primefaces.org/ui"    
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:c="http://java.sun.com/jsp/jstl/core"     
+      xmlns:jsf="http://xmlns.jcp.org/jsf"         
+      xmlns:passthrough="http://xmlns.jcp.org/jsf/passthrough"     
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">     
+
+   
+    <f:view contracts="login" transient="false">
+        <ui:composition template="/template.xhtml">              
+            <ui:define name="content">   
+                <!--=== Content Part ===-->
+                <div class="container-fluid">
+                    <div class="row equal-height-columns">
+                        <div class="col-md-6 col-sm-6 hidden-xs  equal-height-column">
+                            <p:imageSwitch effect="fade">                                    
+                                <p:graphicImage width="800px" height="710px" value="/resources/assets/img/bg/img5.jpg"/>
+                                <p:graphicImage width="800px" height="710px" value="/resources/assets/img/bg/img11.jpg"/>
+                                <p:graphicImage width="800px" height="710px" value="/resources/assets/img/bg/img12.jpg"/>
+                                <p:graphicImage width="800px" height="710px" value="/resources/assets/img/bg/img10.jpg"/>
+                            </p:imageSwitch>
+                        </div>
+                        <div class="col-md-6 col-sm-6 form-block equal-height-column">
+                            <a href="#">
+                                <img src="#{request.contextPath}/resources/assets/img/themes/logo1-blue.png" alt=""/>
+                            </a>
+                            <h2 class="margin-bottom-30">Login To Your Account</h2>
+                            <form action="#">
+                                <div class="login-block">
+                                    <div class="input-group margin-bottom-20">
+                                        <span class="input-group-addon rounded-left"><i class="icon-user color-blue"></i></span>
+                                        <input type="text" class="form-control rounded-right" placeholder="Username"/>
+                                    </div>
+
+                                    <div class="input-group margin-bottom-20">
+                                        <span class="input-group-addon rounded-left"><i class="icon-lock color-blue"></i></span>
+                                        <input type="password" class="form-control rounded-right" placeholder="Password"/>
+                                    </div>
+                                    <div class="checkbox">
+                                        <ul class="list-inline">
+                                            <li>
+                                                <label>
+                                                    <input type="checkbox"/> Remember me
+                                                </label>
+                                            </li>
+                                            <li class="pull-right">
+                                                <a href="#">Forgot password?</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="row margin-bottom-70">
+                                        <div class="col-md-12">
+                                            <button type="submit" class="btn-u btn-u-blue btn-block rounded">Sign In</button>
+                                        </div>
+                                    </div>
+
+                                    <div class="social-login text-center">
+                                        <div class="or rounded-x">Or</div>
+                                        <ul class="list-inline margin-bottom-20">
+                                            <li>
+                                                <button class="btn rounded btn-lg btn-facebook">
+                                                    <i class="fa fa-facebook"></i> Facebook Sign in
+                                                </button>
+                                            </li>
+                                            <li>
+                                                <button class="btn rounded btn-lg btn-twitter">
+                                                    <i class="fa fa-twitter"></i> Twitter Sign in
+                                                </button>
+                                            </li>
+                                        </ul>
+                                        <p>Don't have an account? <a href="#">Create New</a></p>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div><!--/container-->
+
+            </ui:define>
+            <ui:define name="footer">
+               
+            </ui:define>
+        </ui:composition>
+    </f:view>
+</html>

@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+
+    <h:outputScript library="primefaces" name="jquery/jquery.js"  target="head"/>
+    <h:outputScript target="head">
+        $ = jQuery;
+    </h:outputScript>
+    <!--=== End Sticky Footer ===-->
+    <!-- JS Global Compulsory -->
+<!--               <script src="#{request.contextPath}/resources/assets/plugins/jquery/jquery.min.js"></script>-->
+    <script src="#{request.contextPath}/resources/assets/plugins/jquery/jquery-migrate.min.js"></script>
+    <script src="#{request.contextPath}/resources/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- JS Implementing Plugins -->
+    <script src="#{request.contextPath}/resources/assets/plugins/back-to-top.js"></script>
+    <script src="#{request.contextPath}/resources/assets/plugins/backstretch/jquery.backstretch.min.js"></script>
+
+    <!-- JS Customization -->
+    <script src="#{request.contextPath}/resources/assets/js/custom.js"></script>
+
+    <!-- JS Page Level -->
+    <script src="#{request.contextPath}/resources/assets/js/app.js"></script>
+    <script>
+        jQuery(document).ready(function () {
+            App.init();
+        });
+    </script>
+    <script>
+        jQuery(".image-block").backstretch([
+            "#{request.contextPath}/resources/assets/img/bg/img11.jpg",
+            "#{request.contextPath}/resources/assets/img/bg/img5.jpg",
+        ], {
+            fade: 1000,
+            duration: 7000
+        });
+    </script>
+    <!--[if lt IE 9]>
+    <script src="#{request.contextPath}/resources/assets/plugins/respond.js"></script>
+    <script src="#{request.contextPath}/resources/assets/plugins/html5shiv.js"></script>
+    <script src="#{request.contextPath}/resources/assets/plugins/placeholder-IE-fixes.js"></script>
+    <![endif]-->
+
+</html>
+

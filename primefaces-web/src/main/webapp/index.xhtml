@@ -1,0 +1,64 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:p="http://primefaces.org/ui"    
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:c="http://java.sun.com/jsp/jstl/core"     
+      xmlns:jsf="http://xmlns.jcp.org/jsf"         
+      xmlns:passthrough="http://xmlns.jcp.org/jsf/passthrough"     
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">     
+
+
+    <f:view contracts="default" transient="false">
+        <h:head>
+            <title>Title</title>
+
+            <style type="text/css">
+                div[id="growl-error_container"]  {
+                   // background-color: red !important;
+                    right:30px;
+                }
+                div[id="growl-success_container"] {
+                   // background-color: green !important;
+                    left: 30px;
+                    width: 360px;
+                    height: 110px;
+                    
+                }
+            </style>
+        </h:head>
+
+        <ui:composition template="/template.xhtml">              
+            <ui:define name="content">   
+                <h:form id="mainFormId" prependId="false">           
+
+                    <p:growl id="growl-error"  class="ui-growl" showDetail="true" sticky="true" />  
+
+                    <p:growl id="growl-success"  showDetail="true"  sticky="true"/>  
+
+
+                    <p:poll interval="8" listener="#{dataBean.sendInfo}" update="growl-error" />
+                    <p:poll interval="12" listener="#{dataBean.sendInfo1}" update="growl-success" />
+                    <p:poll interval="3" listener="#{dataBean.init}" update="table count" />
+
+                    <div class="container content">
+                        Data list count -> 
+                        <h:outputText id="count" value="#{dataBean.count}"/>
+                        <br/>
+                        <p:dataTable var="list" value="#{dataBean.dataList}"  rows="150"
+                                     paginator="true" id="table"
+                                     paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+                                     rowsPerPageTemplate="5,10,15">
+                            <p:column>
+                                <f:facet name="random name">
+                                </f:facet>
+                                #{list}
+                            </p:column>                            
+                        </p:dataTable>                       
+                    </div>                   
+                </h:form>
+            </ui:define>
+        </ui:composition>
+    </f:view>
+</html>
