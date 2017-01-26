@@ -6,7 +6,7 @@
 
 /**
  *
- * @author armenar
+ * @author armdev
  */
 public class NewClass {
     ///abdc

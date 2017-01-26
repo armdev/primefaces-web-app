@@ -21,7 +21,7 @@ import org.primefaces.context.RequestContext;
 /**
  *
  *
- * @author armenar
+ * @author armdev
  */
 @ManagedBean
 @SessionScoped
