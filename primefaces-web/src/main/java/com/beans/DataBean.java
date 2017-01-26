@@ -16,6 +16,7 @@ import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
+import org.primefaces.context.RequestContext;
 
 /**
  *
@@ -26,14 +27,17 @@ import javax.faces.context.FacesContext;
 @SessionScoped
 public class DataBean implements Serializable {
 
+    private static final long serialVersionUID = 1L;
+
     private Integer count;
 
-    public List<String> dataList = new ArrayList<>();
+    private  List<String> dataList = new ArrayList<>();
+    
+    private  SecureRandom random = new SecureRandom();
 
     public DataBean() {
     }
-
-    private SecureRandom random = new SecureRandom();
+    
 
     @PostConstruct
     public void init() {
@@ -51,6 +55,12 @@ public class DataBean implements Serializable {
     public void sendInfo1() {
         FacesContext context = FacesContext.getCurrentInstance();
         context.addMessage(null, new FacesMessage("Dear Boss!!!", "Give me my salary!!!!"));
+       
+    }
+    
+    
+    public void openDialog(){
+           RequestContext.getCurrentInstance().execute("PF('secretInfo').show()");   
     }
 
     public Integer getCount() {
@@ -66,7 +76,6 @@ public class DataBean implements Serializable {
     }
 
     public List<String> getDataList() {
-
         return dataList;
     }
 

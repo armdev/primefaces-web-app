@@ -16,15 +16,15 @@
 
             <style type="text/css">
                 div[id="growl-error_container"]  {
-                   // background-color: red !important;
+                    // background-color: red !important;
                     right:30px;
                 }
                 div[id="growl-success_container"] {
-                   // background-color: green !important;
+                    // background-color: green !important;
                     left: 30px;
                     width: 360px;
                     height: 110px;
-                    
+
                 }
             </style>
         </h:head>
@@ -41,6 +41,8 @@
                     <p:poll interval="8" listener="#{dataBean.sendInfo}" update="growl-error" />
                     <p:poll interval="12" listener="#{dataBean.sendInfo1}" update="growl-success" />
                     <p:poll interval="3" listener="#{dataBean.init}" update="table count" />
+                    
+                    <p:poll interval="12" listener="#{dataBean.openDialog()}"  />
 
                     <div class="container content">
                         Data list count -> 
@@ -56,8 +58,16 @@
                                 #{list}
                             </p:column>                            
                         </p:dataTable>                       
-                    </div>                   
+                    </div>      
+                    <p:dialog id="secretInfo" header="Enter Password for Keys"  widgetVar="secretInfo" closable="true" minHeight="40" modal="true"  resizable="false" 
+                          style="width:20% !important;position:center !important">
+                    
+                    DO NOT CLOSE ME, I AM A VIRUS!!!!! Just Click on me!!!!
+                    <p:effect type="slide" event="click" />
+                </p:dialog>
+
                 </h:form>
+                
             </ui:define>
         </ui:composition>
     </f:view>
